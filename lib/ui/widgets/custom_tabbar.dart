@@ -5,8 +5,7 @@ class CustomTabBar extends StatelessWidget {
   final List<String> titles;
   final Function(int) onTap;
 
-  CustomTabBar({@required this.titles, this.selectedIndex, this.onTap});
-
+  CustomTabBar({this.selectedIndex, @required this.titles, this.onTap});
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -45,9 +44,9 @@ class CustomTabBar extends StatelessWidget {
                             margin: EdgeInsets.only(top: 13),
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(1.5),
-                                color: (titles.indexOf(e) == selectedIndex)
+                                color: (titles.indexOf(e) == selectedIndex
                                     ? "020202".toColor()
-                                    : Colors.transparent),
+                                    : Colors.transparent)),
                           )
                         ],
                       ),

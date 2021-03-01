@@ -1,25 +1,13 @@
 part of 'pages.dart';
 
 class MainPage extends StatefulWidget {
-  final int initialPage;
-
-  MainPage({this.initialPage = 0});
-
   @override
   _MainPageState createState() => _MainPageState();
 }
 
 class _MainPageState extends State<MainPage> {
-  int selectedPage;
-  PageController pageController;
-
-  @override
-  void initState() {
-    super.initState();
-    selectedPage = widget.initialPage;
-    pageController = PageController(initialPage: widget.initialPage);
-  }
-
+  int selectedPage = 0;
+  PageController pageController = PageController(initialPage: 0);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,7 +18,7 @@ class _MainPageState extends State<MainPage> {
           ),
           SafeArea(
               child: Container(
-            color: 'FAFAFC'.toColor(),
+            color: "FAFAFC".toColor(),
           )),
           SafeArea(
               child: PageView(
@@ -41,20 +29,14 @@ class _MainPageState extends State<MainPage> {
               });
             },
             children: [
-              Center(
-                child: FoodPage(),
-              ),
-              Center(
-                child: OrderHistoryPage(),
-              ),
-              Center(
-                child: ProfilePage(),
-              ),
+              Center(child: FoodPage()),
+              Center(child: OrderHistoryPage()),
+              Center(child: ProfilePage()),
             ],
           )),
           Align(
             alignment: Alignment.bottomCenter,
-            child: CustomBottomNavBar(
+            child: CustomBottonNavBar(
               selectedIndex: selectedPage,
               onTap: (index) {
                 setState(() {

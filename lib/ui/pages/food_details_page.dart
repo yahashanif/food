@@ -5,14 +5,12 @@ class FoodDetailsPage extends StatefulWidget {
   final Transaction transaction;
 
   FoodDetailsPage({this.onBackButtonPressed, this.transaction});
-
   @override
   _FoodDetailsPageState createState() => _FoodDetailsPageState();
 }
 
 class _FoodDetailsPageState extends State<FoodDetailsPage> {
   int quantity = 1;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,7 +37,7 @@ class _FoodDetailsPageState extends State<FoodDetailsPage> {
             children: [
               Column(
                 children: [
-                  //// Back Button
+                  //// BackButton
                   Container(
                     height: 100,
                     padding: EdgeInsets.symmetric(horizontal: defaultMargin),
@@ -52,18 +50,18 @@ class _FoodDetailsPageState extends State<FoodDetailsPage> {
                           }
                         },
                         child: Container(
-                          padding: EdgeInsets.all(3),
-                          width: 30,
-                          height: 30,
-                          decoration: BoxDecoration(
+                            padding: EdgeInsets.all(3),
+                            width: 30,
+                            height: 30,
+                            decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(8),
-                              color: Colors.black12),
-                          child: Image.asset('assets/back_arrow_white.png'),
-                        ),
+                              color: Colors.black12,
+                            ),
+                            child: Image.asset('assets/back_arrow_white.png')),
                       ),
                     ),
                   ),
-                  //// Body
+                  //// BODY
                   Container(
                     margin: EdgeInsets.only(top: 180),
                     padding: EdgeInsets.symmetric(vertical: 26, horizontal: 16),
@@ -82,8 +80,8 @@ class _FoodDetailsPageState extends State<FoodDetailsPage> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 SizedBox(
-                                  width: MediaQuery.of(context).size.width -
-                                      134, // 32 + 102
+                                  width:
+                                      MediaQuery.of(context).size.width - 134,
                                   child: Text(
                                     widget.transaction.food.name,
                                     style: blackFontStyle2,
@@ -186,14 +184,7 @@ class _FoodDetailsPageState extends State<FoodDetailsPage> {
                               width: 163,
                               height: 45,
                               child: RaisedButton(
-                                onPressed: () {
-                                  Get.to(PaymentPage(
-                                    transaction: widget.transaction.copyWith(
-                                        quantity: quantity,
-                                        total: quantity *
-                                            widget.transaction.food.price),
-                                  ));
-                                },
+                                onPressed: () {},
                                 color: mainColor,
                                 elevation: 0,
                                 shape: RoundedRectangleBorder(

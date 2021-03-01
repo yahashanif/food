@@ -27,11 +27,11 @@ class User extends Equatable {
 
 User mockUser = User(
     id: 1,
-    name: 'Jennie Kim',
-    address: 'Jalan Jenderal Sudirman',
-    city: 'Bandung',
+    name: 'Rani',
+    address: 'Lapai, Padang',
+    city: 'Padang',
     houseNumber: '1234',
     phoneNumber: '08123456789',
-    email: 'jennie.kim@blackpink.com',
+    email: 'rani@gmail.com',
     picturePath:
-        'https://i.pinimg.com/474x/8a/f4/7e/8af47e18b14b741f6be2ae499d23fcbe.jpg');
+        'https://th.bing.com/th/id/OIP.y-nGyqT5AwES8oqp344z4gHaHa?pid=Api&rs=1');

@@ -5,7 +5,6 @@ class OrderListItem extends StatelessWidget {
   final double itemWidth;
 
   OrderListItem({@required this.transaction, @required this.itemWidth});
-
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -21,7 +20,7 @@ class OrderListItem extends StatelessWidget {
                   fit: BoxFit.cover)),
         ),
         SizedBox(
-          width: itemWidth - 182, // (60 + 12 + 110)
+          width: itemWidth - 182, // 60 + 12 + 110,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -32,7 +31,7 @@ class OrderListItem extends StatelessWidget {
                 overflow: TextOverflow.clip,
               ),
               Text(
-                "${transaction.quantity} item(s) • " +
+                "${transaction.quantity} item(s) . " +
                     NumberFormat.currency(
                             symbol: 'IDR ', decimalDigits: 0, locale: 'id-ID')
                         .format(transaction.total),
@@ -52,19 +51,19 @@ class OrderListItem extends StatelessWidget {
               ),
               (transaction.status == TransactionStatus.cancelled)
                   ? Text(
-                      'Cancelled',
+                      "Cancelled",
                       style: GoogleFonts.poppins(
                           color: 'D9435E'.toColor(), fontSize: 10),
                     )
                   : (transaction.status == TransactionStatus.pending)
                       ? Text(
-                          'Pending',
+                          "Pending",
                           style: GoogleFonts.poppins(
                               color: 'D9435E'.toColor(), fontSize: 10),
                         )
                       : (transaction.status == TransactionStatus.on_delivery)
                           ? Text(
-                              'On Delivery',
+                              "On Delivery",
                               style: GoogleFonts.poppins(
                                   color: '1ABC9C'.toColor(), fontSize: 10),
                             )
@@ -114,9 +113,8 @@ class OrderListItem extends StatelessWidget {
         month = 'Nov';
         break;
       default:
-        month = 'Des';
+        month = 'Dev';
     }
-
     return month + ' ${dateTime.day}, ${dateTime.hour}:${dateTime.minute}';
   }
 }

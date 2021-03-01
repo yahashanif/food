@@ -15,6 +15,7 @@ class FoodLoaded extends FoodState {
   FoodLoaded(this.foods);
 
   @override
+  // TODO: implement props
   List<Object> get props => [foods];
 }
 
@@ -24,5 +25,6 @@ class FoodLoadingFailed extends FoodState {
   FoodLoadingFailed(this.message);
 
   @override
+  // TODO: implement props
   List<Object> get props => [message];
 }

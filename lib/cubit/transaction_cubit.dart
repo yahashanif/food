@@ -10,9 +10,9 @@ class TransactionCubit extends Cubit<TransactionState> {
 
   Future<void> getTransactions() async {
     ApiReturnValue<List<Transaction>> result =
-        await TransactionServices.getTransactions();
+        await TransactionServices.gettransaction();
 
-    if (result.value != null) {
+    if (result != null) {
       emit(TransactionLoaded(result.value));
     } else {
       emit(TransactionLoadingFailed(result.message));
@@ -23,9 +23,10 @@ class TransactionCubit extends Cubit<TransactionState> {
     ApiReturnValue<Transaction> result =
         await TransactionServices.submitTransaction(transaction);
 
-    if (result.value != null) {
+    if (result != null) {
       emit(TransactionLoaded(
           (state as TransactionLoaded).transactions + [result.value]));
+
       return true;
     } else {
       return false;
